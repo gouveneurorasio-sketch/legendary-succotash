@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Administration Secrète</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #222; color: #fff; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: #333; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+        h2 { color: #ffc107; text-align: center; }
+        .tx-item { background: #444; padding: 15px; margin: 10px 0; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; }
+        button { padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .btn-valider { background: #28a745; color: white; }
+        .btn-refuser { background: #dc3545; color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Panneau d'Administration Exclusif</h2>
+        <p>Ici, vous validez ou refusez les dépôts de vos membres en toute sécurité :</p>
+        
+        <div id="transactions-list">
+            <!-- Exemple de demande en attente -->
+            <div class="tx-item">
+                <div>
+                    <strong>Utilisateur :</strong> Jean<br>
+                    <strong>Montant :</strong> 5000 CFA<br>
+                    <strong>Réf :</strong> MTN-123456
+                </div>
+                <div>
+                    <button class="btn-valider" onclick="valider('Jean', 5000)">Valider</button>
+                    <button class="btn-refuser" onclick="refuser()">Refuser</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function valider(user, montant) {
+            alert("Le dépôt de " + montant + " CFA pour " + user + " a été validé avec succès !");
+            // Ici, le script mettra à jour la base de données directement
+        }
+
+        function refuser() {
+            alert("La transaction a été refusée.");
+        }
+    </script>
+
+</body>
+</html>
