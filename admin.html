@@ -48,3 +48,48 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Tableau de Bord</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f7f6; margin: 0; padding: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); max-width: 400px; margin: 20px auto; }
+        input, button { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #28a745; color: white; border: none; cursor: pointer; font-weight: bold; }
+        button:hover { background: #218838; }
+        .balance { font-size: 24px; color: #333; text-align: center; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Espace Utilisateur</h2>
+        <div class="balance">Solde : <span id="user-balance">0</span> CFA</div>
+        
+        <hr>
+        
+        <h3>Faire un Dépôt Direct</h3>
+        <input type="number" id="deposit-amount" placeholder="Montant du dépôt (ex: 5000)">
+        <input type="text" id="deposit-ref" placeholder="Référence / Numéro de transaction">
+        <button onclick="submitDeposit()">Soumettre le dépôt</button>
+    </div>
+
+    <script>
+        function submitDeposit() {
+            const amount = document.getElementById('deposit-amount').value;
+            const ref = document.getElementById('deposit-ref').value;
+            
+            if(!amount || !ref) {
+                alert("Veuillez remplir tous les champs !");
+                return;
+            }
+            
+            alert("Votre demande de dépôt de " + amount + " CFA a bien été envoyée. En attente de validation.");
+            // Ici, la demande sera envoyée à votre base de données pour que vous seul puissiez valider.
+        }
+    </script>
+
+</body>
+</html>
